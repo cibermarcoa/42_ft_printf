@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdiaz-ca <mdiaz-ca@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,23 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_str(char *str)
+int	ft_parse(char const *str, va_list args)
 {
 	int	i;
+	int	length;
 
-	if (str == NULL)
+	i = 0;
+	length = 0;
+	while (str[i])
 	{
-		write(1, "(null)", 6);
-		return (6);
+		if (str[i] == '%')
+		{
+			i++;
+			length += ft_formats(str[i], args);
+		}
+		else if (str[i - 1] != '%' || str[i - 2] == '%')
+			length += ft_printf_chr(str[i]);
+		i++;
 	}
-	i = -1;
-	while (str[++i])
-		write(1, &str[i], 1);
-	return (i);
+	return (length);
 }

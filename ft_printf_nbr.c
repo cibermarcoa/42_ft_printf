@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdiaz-ca <mdiaz-ca@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,13 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_str(char *str)
+int	ft_printf_nbr(int n)
 {
-	int	i;
+	char	*str;
+	int		length;
 
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	i = -1;
-	while (str[++i])
-		write(1, &str[i], 1);
-	return (i);
+	str = ft_itoa(n);
+	length = ft_printf_str(str);
+	free(str);
+	return (length);
 }
