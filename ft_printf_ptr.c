@@ -39,11 +39,6 @@ char	*ft_itoa_ptr(unsigned long n)
 	str[len] = '\0';
 	if (n == 0)
 		str[0] = 48;
-	// if (n < 0)
-	// {
-	// 	str[0] = '-';
-	// 	n *= -1;
-	// }
 	while (n)
 	{
 		if ((n % 16) < 10)
@@ -60,8 +55,6 @@ size_t	ft_itoa_len_ptr(unsigned long n)
 	size_t	len;
 
 	len = 0;
-	// if (n < 0)
-	// 	len++;
 	if (n == 0)
 		len++;
 	while (n)
