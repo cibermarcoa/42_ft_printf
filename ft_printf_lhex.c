@@ -12,16 +12,21 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_lhex(unsigned long hex)
+size_t	ft_itoa_len_lhex(unsigned long n)
 {
-	char	*str;
-	int		length;
+	size_t	len;
 
-	str = ft_itoa_lhex(hex);
-	length = ft_strlen(str);
-	ft_printf_str(str);
-	free(str);
-	return (length);
+	len = 0;
+	if (n < 0)
+		len++;
+	if (n == 0)
+		len++;
+	while (n)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
 }
 
 char	*ft_itoa_lhex(unsigned long n)
@@ -52,19 +57,14 @@ char	*ft_itoa_lhex(unsigned long n)
 	return (str);
 }
 
-size_t	ft_itoa_len_lhex(unsigned long n)
+int	ft_printf_lhex(unsigned long hex)
 {
-	size_t	len;
+	char	*str;
+	int		length;
 
-	len = 0;
-	if (n < 0)
-		len++;
-	if (n == 0)
-		len++;
-	while (n)
-	{
-		n /= 16;
-		len++;
-	}
-	return (len);
+	str = ft_itoa_lhex(hex);
+	length = ft_strlen(str);
+	ft_printf_str(str);
+	free(str);
+	return (length);
 }
