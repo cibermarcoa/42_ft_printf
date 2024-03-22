@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_formats.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiaz-ca <mdiaz-ca@student.42madrid.fr>    +#+  +:+       +#+        */
+/*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 22:04:32 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2022/04/10 17:21:15 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:21:50 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+/*
 int	ft_formats(char c, va_list args)
 {
 	int	length;
@@ -33,3 +33,4 @@ int	ft_formats(char c, va_list args)
 		length += ft_printf_chr('%');
 	return (length);
 }
+*/

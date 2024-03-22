@@ -3,31 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_unbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiaz-ca <mdiaz-ca@student.42madrid.fr>    +#+  +:+       +#+        */
+/*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 21:54:31 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2022/07/13 17:32:25 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:08:03 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf_unbr(int n)
-{
-	int		len;
-	char	*num;
 
-	len = 0;
-	if (n == 0)
-		len += write(1, "0", 1);
-	else
-	{
-		num = ft_upnb(nb);
-		len += ft_pstr(num);
-		free (num);
-	}
-	return (len);
-}
 
 int	ft_pnb(int nb)
 {
@@ -38,7 +23,7 @@ int	ft_pnb(int nb)
 	if (nb == 0)
 		return (write (1, "0", 1));
 	num = ft_itoa(nb);
-	len = ft_pstr(num);
+	len = ft_printf_str(num);
 	free(num);
 	return (len);
 }
@@ -81,9 +66,24 @@ char	*ft_upnb(unsigned int nb)
 	}
 	return (n);
 }
+int	ft_printf_unbr(int n)
+{
+	int		len;
+	char	*num;
 
+	len = 0;
+	if (n == 0)
+		len += write(1, "0", 1);
+	else
+	{
+		num = ft_upnb(n);
+		len += ft_printf_str(num);
+		free (num);
+	}
+	return (len);
+}
 // %u: print unsigned + return length
-
+/*
 int	ft_punsignednb(unsigned int nb)
 {
 	int		len;
@@ -100,9 +100,9 @@ int	ft_punsignednb(unsigned int nb)
 	}
 	return (len);
 }
-
+*/
 // %d/i: mix function, print nb and return length 
-
+/*
 int	ft_pnb(int nb)
 {
 	int		len;
@@ -116,3 +116,5 @@ int	ft_pnb(int nb)
 	free(num);
 	return (len);
 }
+
+*/
