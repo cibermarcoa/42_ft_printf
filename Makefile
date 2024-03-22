@@ -3,7 +3,7 @@ NAME = libftprintf.a
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_memcpy.c ft_printf.c ft_printf_nbr.c ft_printf_unbr.c ft_printf_str.c ft_strdup.c ft_strlen.c ft_itoa.c ft_printf_chr.c ft_printf_hex.c ft_printf_ptr.c ft_strlcpy.c
+SRCS = ft_memcpy.c ft_printf.c ft_printf_nbr.c ft_printf_unbr.c ft_printf_str.c ft_itoa.c ft_printf_chr.c ft_printf_hex.c ft_printf_ptr.c ft_putchar_fd.c
 
 OBJS = $(SRCS:.c=.o)
 

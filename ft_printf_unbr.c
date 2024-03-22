@@ -6,13 +6,11 @@
 /*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 21:54:31 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2024/03/22 18:08:03 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:05:32 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-
 
 int	ft_pnb(int nb)
 {
@@ -28,12 +26,6 @@ int	ft_pnb(int nb)
 	return (len);
 }
 
-
-
-
-
-
-
 int	ft_nblen(unsigned int nb)
 {
 	int	len;
@@ -46,7 +38,6 @@ int	ft_nblen(unsigned int nb)
 	}
 	return (len);
 }
-// itoa style 
 
 char	*ft_upnb(unsigned int nb)
 {
@@ -66,6 +57,7 @@ char	*ft_upnb(unsigned int nb)
 	}
 	return (n);
 }
+
 int	ft_printf_unbr(int n)
 {
 	int		len;
@@ -82,39 +74,3 @@ int	ft_printf_unbr(int n)
 	}
 	return (len);
 }
-// %u: print unsigned + return length
-/*
-int	ft_punsignednb(unsigned int nb)
-{
-	int		len;
-	char	*num;
-
-	len = 0;
-	if (nb == 0)
-		len += write(1, "0", 1);
-	else
-	{
-		num = ft_upnb(nb);
-		len += ft_pstr(num);
-		free (num);
-	}
-	return (len);
-}
-*/
-// %d/i: mix function, print nb and return length 
-/*
-int	ft_pnb(int nb)
-{
-	int		len;
-	char	*num;
-
-	len = 0;
-	if (nb == 0)
-		return (write (1, "0", 1));
-	num = ft_itoa(nb);
-	len = ft_pstr(num);
-	free(num);
-	return (len);
-}
-
-*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdiaz-ca <mdiaz-ca@student.42madrid.fr>    +#+  +:+       +#+        */
+/*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:31:27 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2023/03/16 19:05:19 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:55:54 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static size_t	ft_itoa_len(int n)
 }
 
 char	*ft_itoa(int n)
-{	
+{
 	size_t		len;
 	char		*str;
 

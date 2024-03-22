@@ -6,7 +6,7 @@
 /*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 22:04:32 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2024/03/22 18:28:16 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:05:57 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_formats(char c, va_list args)
 	else if (c == 'd' || c == 'i')
 		length += ft_printf_nbr(va_arg(args, int));
 	else if (c == 'u')
-		length += ft_printf_unbr(va_arg(args, int)); // this could be unbr
+		length += ft_printf_unbr(va_arg(args, int));
 	else if (c == 'x' || c == 'X')
 		length += ft_printf_hex(va_arg(args, unsigned int), c);
 	else if (c == '%')
@@ -54,25 +54,6 @@ int	ft_parse(char const *str, va_list args)
 	}
 	return (length);
 }
-/*
-int	ft_printf(char const *input, ...)
-{
-	char	*str;
-	int		length;
-	va_list	args;
-
-	if (!input || input[0] == '\0')
-		return (0);
-	str = ft_strdup(input);
-	if (!str || str[0] == '\0')
-		return (0);
-	length = 0;
-	va_start(args, input);
-	length = ft_parse(str, args);
-	va_end(args);
-	free(str);
-	return (length);
-}*/
 
 int	ft_printf(const char *str, ...)
 {
