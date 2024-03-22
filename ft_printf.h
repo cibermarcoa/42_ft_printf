@@ -6,7 +6,7 @@
 /*   By: mdiaz-ca <mdiaz-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 22:04:32 by mdiaz-ca          #+#    #+#             */
-/*   Updated: 2024/03/22 18:24:27 by mdiaz-ca         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:36:25 by mdiaz-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int			ft_printf_str(char *str);
 int			ft_printf_nbr(int nb);
 int			ft_printf_unbr(int nb);
 int			ft_printf_ptr(unsigned long long p);
-int			ft_printf_lhex(unsigned long hex);
-char		*ft_itoa_lhex(unsigned long n);
-size_t		ft_itoa_len_lhex(unsigned long n);
-int			ft_printf_uhex(unsigned long hex);
+int         ft_printf_hex(unsigned int num, const char format);
 
 #endif
